@@ -1,12 +1,14 @@
 <template lang="pug">
   div
     website-navbar
-    section.main-content
+    section.main-content.mt-5
       .container
-        nuxt
+        .columns.is-centered
+          .column.is-8
+            nuxt
     footer.footer
       .content.has-text-centered
-        | hello default template
+            | blog layout
         
 </template>
 

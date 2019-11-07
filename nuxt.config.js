@@ -1,5 +1,9 @@
 const pkg = require('./package')
+import Mode from 'frontmatter-markdown-loader/mode'
 
+import { getRoutes } from './util/helpers.js'
+
+import path from 'path'
 module.exports = {
   mode: 'universal',
 
@@ -21,12 +25,12 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: 'red' },
 
   /*
   ** Global CSS
   */
-  css: ['~/assets/custom.scss'],
+  css: [],
 
   /*
   ** Plugins to load before mounting the App
@@ -37,11 +41,14 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [,
-    // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy'
+  buildModules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/axios'
   ],
 
+  axios: {
+    baseURL: 'http://localhost:3000'
+  },
   /*
   ** Build configuration
   */
@@ -49,8 +56,32 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend(config, { loaders }) {
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          mode: [Mode.VUE_COMPONENT],
+          vue: {
+            root: "dynamicMarkdown"
+          }
+        }
+      })
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: path.resolve('./my-loader.js'),
 
+      })
+    }
+  },
+  serverMiddleware: [
+    // API middleware
+    '~/api/index.js'
+  ],
+  generate: {
+    subFolders: false,
+    routes() {
+      return getRoutes()
     }
   }
 }
