@@ -1,18 +1,22 @@
 {
-  "name": "williamhoyle.ca",
+  "name": "vue-css-grid-dashboard-example",
   "version": "1.0.0",
-  "description": "William Hoyle&#39;s personal website",
+  "description": "Vue CSS Grid Dashboard example code",
   "author": "Will Hoyle",
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt build --analyze",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "highlight.js": "^9.18.1",
+    "mustache": "^4.0.0",
     "nuxt": "^2.10.2",
+    "postcss-import": "^12.0.1",
     "pug-plain-loader": "^1.0.0"
   },
   "devDependencies": {
@@ -21,6 +25,9 @@
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "2.6.2",
     "frontmatter-markdown-loader": "^3.1.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-table-of-contents": "^0.4.4",
     "prettier": "1.14.3",
     "pug": "^2.0.3",
     "simple-git": "^1.126.0"

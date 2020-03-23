@@ -1,3 +1,124 @@
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@import 'highlight.js/styles/atelier-sulphurpool-light.css';
+
+@import "./markdown.css";
+
+html {
+    @apply font-sans;
+}
+
+.front-page-links {
+    @apply text-green-900 font-bold text-lg;
+    color: rgb(103, 128, 100);
+}
+
+.markdown-body p {
+    padding-bottom: 25px;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #6984d1;
+  color: #6a737d;
+  /* padding-left: 1em;
+  padding-right: 1em; */
+  /* padding-top: auto;
+  padding-bottom: auto; */
+  padding: 10px;
+  background-color: rgb(241, 243, 250);
+  display:flex;
+  align-items: center;
+}
+
+.markdown-body blockquote p {
+  padding-bottom: 0px;
+}
+
+.table-of-contents a {
+  color: #556eb1;
+}
+
+.lt-grid-container {
+  display: grid;
+  grid-template-areas: 'header' 'body' 'footer';
+}
+
+
+.lt-body {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-areas: 'menu' 'content';
+  grid-area: body;
+  @apply m-8;
+}
+
+
+
+@responsive {
+  .lt-body-md {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-areas: 'menu content';
+    grid-area: body;
+  }
+}
+@responsive {
+  .lt-body-lg {
+    display: grid;
+    grid-template-columns: 200px 1fr 10fr 1fr;
+    grid-template-areas: 'menu menu content ...';
+    grid-area: body;
+  }
+}
+@responsive {
+  .lt-body-xl {
+    display: grid;
+    grid-template-columns: 200px 1fr 5fr 1fr;
+    grid-template-areas: 'menu menu content ...';
+    grid-area: body;
+  }
+}
+
+
+
+.lt-header {
+  grid-area: header;
+}
+
+.lt-menu {
+  grid-area: menu;
+}
+
+.lt-content {
+  grid-area: content;
+  /* 
+  if you don't put this, the content will stretch past the screen width
+  see: https://css-tricks.com/preventing-a-grid-blowout/
+  
+  */
+  min-width: 0;
+}
+
+.lt-footer {
+  grid-area: footer;
+}
+
+h1 {
+    @apply text-3xl;
+}
+
+h2 {
+    @apply text-2xl;
+}
+h3 {
+    @apply text-xl;
+}
+h4 {
+    @apply text-lg;
+}
+h5 {
+    @apply font-bold;
+}
