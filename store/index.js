@@ -1,25 +1,54 @@
+import path from 'path'
+
+
+const isProd = process.env.NODE_ENV == 'production'
+
 export const state = () => {
     return {
         routes: [],
-        posts: []
+        posts: [],
+        snippets: []
     }
 }
 
-const posts = require('../util/helpers.js').getPosts(
-    require.context('~/content/', true, /\.md$/)
+import { getPosts } from '../util/helpers'
+
+let posts = getPosts(
+    require.context('~/content/blog/2020/', true, /\.md$/)
 )
 
+let drafts = getPosts(
+    require.context('~/content/blog/drafts/', true, /\.md$/)
+)
+
+let snippets = getPosts(
+    require.context('~/content/snippets/', true, /\.md$/)
+)
+console.log(posts);
 export const actions = {
     async nuxtServerInit({ commit }) {
+        if (!isProd) {
+            posts = {
+                ...posts,
+                ...drafts
+            }
+        }
         commit("setPosts", posts)
+        commit("setSnippets", snippets)
     }
 }
 
 export const mutations = {
     setPosts(state, posts) {
-        state.posts = Object.entries(posts).map(([key, val]) =>
-            ({ key, attributes: val.attributes })
-        )
+        state.posts = Object.entries(posts).map(([key, val]) => {
+            return { key, attributes: val.attributes }
+        })
+    },
+    setSnippets(state, snippets) {
+        state.snippets = Object.entries(snippets).map(([key, val]) => {
+            return { key, attributes: val.attributes }
+        })
+
     }
 }
 

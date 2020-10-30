@@ -1,4 +1,3 @@
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -76,8 +75,8 @@ html {
 @responsive {
   .lt-body-xl {
     display: grid;
-    grid-template-columns: 200px 1fr 5fr 1fr;
-    grid-template-areas: 'menu menu content ...';
+    grid-template-columns: 250px 1fr 10fr 1fr;
+    grid-template-areas: 'menu ... content ...';
     grid-area: body;
   }
 }
@@ -94,10 +93,10 @@ html {
 
 .lt-content {
   grid-area: content;
-  /* 
+  /*
   if you don't put this, the content will stretch past the screen width
   see: https://css-tricks.com/preventing-a-grid-blowout/
-  
+
   */
   min-width: 0;
 }

@@ -9,12 +9,24 @@ module.exports = async function (source, map, meta) {
 
     let updatedAt = info.all.length ? (new Date(info.all[0].date)).getTime() : null
 
-    let parts = this.resourcePath.split(path.sep)
-    let year = parts[parts.length - 2]
-    let slug = path.basename(parts[parts.length - 1], '.md')
-    let href = `/blog/${year}/${slug}`
+    // we are assuming "content" will be here. if we made this more 
+    // generic we'd allow that to be customized
+    // path.sep = /home/will/projects/williamhoyle.ca/content/blog/2020/filename.md
 
-    source = source.replace('---', `---\nupdatedAt: ${updatedAt}\ncreatedAt: ${createdAt}\nhref: ${href}\n`)
-    console.log(meta);
+    let parts = this.resourcePath.split('content')
+
+    let href = parts.pop()
+    // remove extension
+    href = href.split('.').slice(0, -1).join('.')
+    // enrich the yaml frontmatter before it goes through the loader
+    // then, we'll be able to access this info inside our templates
+    source = source
+        .replace(
+            '---',
+            `---
+updatedAt: ${updatedAt}
+createdAt: ${createdAt}
+href: ${href}
+`)
     callback(null, source, map, meta)
 }

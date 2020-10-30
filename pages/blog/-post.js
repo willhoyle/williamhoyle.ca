@@ -1,12 +1,11 @@
 const posts = require('../../util/helpers.js').getPosts(require.context("~/content/", true, /\.md$/))
 
-
 export default {
     layout(context) {
         return 'default'
     },
     async asyncData({ params, route }) {
-        let post = route.path.replace('/blog/', '')
+        let post = route.path
         try {
             return {
                 post,
@@ -21,6 +20,7 @@ export default {
 
     },
     render: function (createElement) {
+
         if (!posts[this.post]) {
             return createElement("div")
         }

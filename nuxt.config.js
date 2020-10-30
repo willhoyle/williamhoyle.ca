@@ -12,42 +12,55 @@ import MarkdownIt from 'markdown-it'
 const md = new MarkdownIt({
   html: true,
 
-  highlight: function (str, lang) {
+  highlight: function(str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return '<pre class="hljs"><code>' +
+        return (
+          '<pre class="hljs"><code>' +
           hljs.highlight(lang, str, true).value +
-          '</code></pre>';
-      } catch (__) { }
+          '</code></pre>'
+        )
+      } catch (__) {}
     }
 
-    return '<pre class="hljs"><code>' + str + '</code></pre>';
+    return '<pre class="hljs"><code>' + str + '</code></pre>'
   }
 })
 
 md.use(require('markdown-it-anchor'))
-md.use(require('markdown-it-table-of-contents'), { includeLevel: [1, 2, 3] })
-
-
-// constants
-const baseURL = process.env.NODE_ENV == 'production' ? '' : 'http://localhost:3000'
-
-
-
-const getDynamicPaths = (urlFilepathTable) => {
-  return [].concat(
-    ...Object.keys(urlFilepathTable).map(url => {
-      var filepathGlob = urlFilepathTable[url];
-      return glob
-        .sync(filepathGlob)
-        .map(filepath => `${url}/${path.dirname(filepath).replace("content/", "")}/${path.basename(filepath, '.md')}`);
-    })
-  );
-}
-const dynamicRoutes = getDynamicPaths({
-  'blog': 'content/**/*.md'
+md.use(require('markdown-it-table-of-contents'), {
+  includeLevel: [1, 2, 3]
 })
 
+let isProd = process.env.NODE_ENV == 'production'
+
+// constants
+const baseURL = isProd ? '' : 'http://localhost:3000'
+
+const getDynamicPaths = urlFilepathTable => {
+  return [].concat(
+    ...Object.keys(urlFilepathTable).map(url => {
+      var filepathGlob = urlFilepathTable[url]
+      return glob.sync(filepathGlob).map(filepath => {
+        return `${path
+          .dirname(filepath)
+          .replace('content/', '')}/${path.basename(filepath, '.md')}`
+      })
+    })
+  )
+}
+
+let content = {
+  blog: 'content/blog/**/*.md',
+  snippets: 'content/snippets/*.md'
+}
+if (!isProd) {
+  content['drafts'] = 'content/blog/drafts/*.md'
+}
+
+const dynamicRoutes = getDynamicPaths(content)
+
+console.log(dynamicRoutes)
 
 module.exports = {
   mode: 'universal',
@@ -64,7 +77,10 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap' }
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap'
+      }
     ]
   },
 
@@ -81,17 +97,12 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    '~/plugins/global.js'
-  ],
+  plugins: ['~/plugins/global.js'],
 
   /*
   ** Nuxt.js modules
   */
-  buildModules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/axios'
-  ],
+  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/axios'],
 
   axios: {
     baseURL
@@ -110,14 +121,14 @@ module.exports = {
         options: {
           mode: [Mode.VUE_COMPONENT],
           vue: {
-            root: "markdown-body"
+            root: 'markdown-body'
           },
           markdownIt: md
         }
       })
       config.module.rules.push({
         test: /\.md$/,
-        loader: path.resolve('./my-loader.js'),
+        loader: path.resolve('./my-loader.js')
       })
     }
   },
@@ -125,9 +136,9 @@ module.exports = {
     // API middleware
     '~/api/index.js'
   ],
-  router: {
-    base: process.env.DEPLOY_ENV == 'GH_PAGES' ? '/vue-css-grid-dashboard-example/' : '/'
-  },
+  // router: {
+  //   base: process.env.DEPLOY_ENV == 'GH_PAGES' ? '/vue-css-grid-dashboard-example/' : '/'
+  // },
   generate: {
     dir: 'docs',
     subFolders: false,

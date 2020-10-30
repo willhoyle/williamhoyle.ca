@@ -3,7 +3,9 @@ export const getPosts = (requireContext) => {
         return requireContext(key);
     });
     return requireContext.keys().reduce((posts, key, idx) => {
-        const [, name] = key.match(/\/(.+)\.md$/);
+
+        let name = key.replace(".", "")
+        name = name.replace(".md", "")
         posts[name] = imports[idx]
         return posts
     }, {})

@@ -5,7 +5,7 @@
       div(ref="menu" class="text-center md:text-left justify-center").lt-menu
           div(class="hover:text-gray-700 text-gray-600 text-2xl cursor-pointer text-center md:text-left ").mb-2
             nuxt-link(to="/" active-class="none")
-              div example title
+              div william's notes
           div(class="w-full md:w-3/4")
             hr  
           div(class="text-center md:text-left").mt-2
@@ -37,7 +37,7 @@ export default {
       links: [
         { to: '/blog', label: 'blog' },
         { to: '/projects', label: 'projects' },
-        { to: '/code', label: 'code snippets' },
+        { to: '/snippets', label: 'code snippets' },
         { to: '/links', label: 'links' },
         { to: '/fitness', label: 'fitness' }
       ]

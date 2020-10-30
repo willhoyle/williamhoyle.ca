@@ -1,8 +1,8 @@
 {
-  "name": "vue-css-grid-dashboard-example",
+  "name": "williams-notes",
   "version": "1.0.0",
-  "description": "Vue CSS Grid Dashboard example code",
-  "author": "Will Hoyle",
+  "description": "william's personal notes and projects",
+  "author": "William Hoyle",
   "private": true,
   "scripts": {
     "dev": "nuxt",
