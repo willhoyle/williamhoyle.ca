@@ -140,7 +140,7 @@ module.exports = {
   //   base: process.env.DEPLOY_ENV == 'GH_PAGES' ? '/vue-css-grid-dashboard-example/' : '/'
   // },
   generate: {
-    dir: 'docs',
+    dir: 'dist',
     subFolders: false,
     routes() {
       return dynamicRoutes
