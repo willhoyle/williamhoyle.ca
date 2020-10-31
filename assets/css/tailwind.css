@@ -2,38 +2,18 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* purgecss start ignore */
 @import 'highlight.js/styles/atelier-sulphurpool-light.css';
 
-@import "./markdown.css";
+@import './markdown.css';
 
 html {
-    @apply font-sans;
+  @apply font-sans;
 }
 
 .front-page-links {
-    @apply text-green-900 font-bold text-lg;
-    color: rgb(103, 128, 100);
-}
-
-.markdown-body p {
-    padding-bottom: 25px;
-}
-
-.markdown-body blockquote {
-  border-left: .25em solid #6984d1;
-  color: #6a737d;
-  /* padding-left: 1em;
-  padding-right: 1em; */
-  /* padding-top: auto;
-  padding-bottom: auto; */
-  padding: 10px;
-  background-color: rgb(241, 243, 250);
-  display:flex;
-  align-items: center;
-}
-
-.markdown-body blockquote p {
-  padding-bottom: 0px;
+  @apply text-green-900 font-bold text-lg;
+  color: rgb(103, 128, 100);
 }
 
 .table-of-contents a {
@@ -45,7 +25,6 @@ html {
   grid-template-areas: 'header' 'body' 'footer';
 }
 
-
 .lt-body {
   display: grid;
   grid-auto-flow: row;
@@ -53,8 +32,6 @@ html {
   grid-area: body;
   @apply m-8;
 }
-
-
 
 @responsive {
   .lt-body-md {
@@ -81,8 +58,6 @@ html {
   }
 }
 
-
-
 .lt-header {
   grid-area: header;
 }
@@ -94,9 +69,9 @@ html {
 .lt-content {
   grid-area: content;
   /*
-  if you don't put this, the content will stretch past the screen width
+    if you don't put this, the content will stretch past the screen width
   see: https://css-tricks.com/preventing-a-grid-blowout/
-
+  
   */
   min-width: 0;
 }
@@ -106,18 +81,20 @@ html {
 }
 
 h1 {
-    @apply text-3xl;
+  @apply text-3xl;
 }
 
 h2 {
-    @apply text-2xl;
+  @apply text-2xl;
 }
 h3 {
-    @apply text-xl;
+  @apply text-xl;
 }
 h4 {
-    @apply text-lg;
+  @apply text-lg;
 }
 h5 {
-    @apply font-bold;
+  @apply font-bold;
 }
+
+/* purgecss end ignore */

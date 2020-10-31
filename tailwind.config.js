@@ -6,9 +6,6 @@
 */
 
 module.exports = {
-  purge: {
-    enabled: true
-  },
   theme: {
     fontFamily: {
       sans: [

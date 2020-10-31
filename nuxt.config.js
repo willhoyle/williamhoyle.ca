@@ -63,7 +63,7 @@ const dynamicRoutes = getDynamicPaths(content)
 console.log(dynamicRoutes)
 
 module.exports = {
-  mode: 'universal',
+  target: 'static',
 
   /*
   ** Headers of the page
