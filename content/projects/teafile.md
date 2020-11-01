@@ -6,7 +6,7 @@ teafile - pure javascript library for the teafile format
 
 ![npm](https://img.shields.io/npm/v/teafile)
 
-> teatime file format is designed and maintained by [DiscreteLogics](http://discretelogics.com/teafiles/). I have no affiliation with them.
+> The specification for the teatime file format is designed and maintained by [DiscreteLogics](http://discretelogics.com/teafiles/). I have no affiliation with them.
 
 [[toc]]
 
