@@ -19,14 +19,14 @@
           div(class="text-gray-800 mx-5 md:mx-0")
             nuxt
     .lt-footer
-        div(class="w-full py-12 md:hidden")
-            hr  
 
         footer(class="w-full pb-12").text-gray-600.flex.flex-wrap.justify-center
+            .w-full.pt-12 
+                hr
             .flex.flex-wrap.w-full
-                div(class="w-1/2 py-5").text-right.pr-5
+                div(class="w-1/4 md:w-1/2 py-5").text-right.pr-5
                     | Built by
-                div(class="w-1/2 py-5")
+                div(class="w-3/4 md:w-1/2 py-5")
                     div.w-full
                         | William Hoyle
                         div.mt-1
@@ -36,11 +36,12 @@
                         a(href="https://github.com/willhoyle").nuxt-link-active 
                             img(src="/GitHub-Mark/PNG/GitHub-Mark-32px.png" class="w-6 h-6 mr-2").inline
                             | Github 
-                        
+            .w-full 
+                hr
             .flex.flex-wrap.w-full.mt-3
-                div(class="w-1/2").text-right.pr-5
+                div(class="w-1/4 md:w-1/2 py-5").text-right.pr-5
                     | Built with
-                div(class="w-1/2")
+                div(class="w-3/4 md:w-1/2 py-5")
                     div.w-full
                         a(href="https://nuxtjs.org").nuxt-link-active nuxt
                     div.w-full
