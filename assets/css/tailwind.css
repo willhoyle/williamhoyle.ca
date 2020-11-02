@@ -12,12 +12,12 @@ html {
 }
 
 .front-page-links {
-  @apply text-green-900 font-bold text-lg;
-  color: rgb(103, 128, 100);
+  @apply text-green-900 font-bold text-xl;
+  color: rgb(98, 106, 224);
 }
 
 .table-of-contents a {
-  color: #556eb1;
+  color: rgb(98, 106, 224);
 }
 
 .lt-grid-container {
@@ -30,7 +30,7 @@ html {
   grid-auto-flow: row;
   grid-template-areas: 'menu' 'content';
   grid-area: body;
-  min-height: 500px;
+
   @apply m-1;
 }
 
@@ -41,6 +41,7 @@ html {
     grid-template-areas: 'menu content';
     grid-area: body;
     @apply m-8;
+    min-height: 500px;
   }
 }
 @responsive {
@@ -50,6 +51,7 @@ html {
     grid-template-areas: 'menu menu content ...';
     grid-area: body;
     @apply m-8;
+    min-height: 500px;
   }
 }
 @responsive {
@@ -59,6 +61,7 @@ html {
     grid-template-areas: 'menu ... content ...';
     grid-area: body;
     @apply m-8;
+    min-height: 500px;
   }
 }
 
