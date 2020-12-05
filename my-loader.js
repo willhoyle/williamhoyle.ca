@@ -24,15 +24,16 @@ module.exports = async function(source, map, meta) {
     .slice(0, -1)
     .join('.')
 
-  createdAt =
-    createdAt && DateTime.fromMillis(createdAt).toFormat('yyyy LLLL dd')
+    
   // enrich the yaml frontmatter before it goes through the loader
   // then, we'll be able to access this info inside our templates
   source = source.replace(
     '---',
     `---
-updatedAt: ${updatedAt}
-createdAt: ${createdAt}
+updatedAt: ${updatedAt && DateTime.fromMillis(updatedAt).toFormat('yyyy LLLL dd')}
+createdAt: ${createdAt && DateTime.fromMillis(createdAt).toFormat('yyyy LLLL dd')}
+jsCreatedAt: ${createdAt}
+jsUpdatedAt: ${updatedAt}
 href: ${href}
 `
   )

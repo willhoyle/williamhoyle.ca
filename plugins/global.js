@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
-
+import PageLayout from '~/components/PageLayout.vue'
+Vue.component('PageLayout', PageLayout)
 
 // import Card from '~/components/Card.vue'
 // Vue.component("FrontPageCard", Card)

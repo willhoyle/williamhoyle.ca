@@ -1,8 +1,7 @@
 ---
 title: 'teafile'
+subtitle: teafile - pure javascript library for the teafile format
 ---
-
-teafile - pure javascript library for the teafile format
 
 ![npm](https://img.shields.io/npm/v/teafile)
 
