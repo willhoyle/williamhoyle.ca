@@ -30,8 +30,8 @@ module.exports = async function(source, map, meta) {
   source = source.replace(
     '---',
     `---
-updatedAt: ${updatedAt && DateTime.fromMillis(updatedAt).toFormat('yyyy LLLL dd')}
-createdAt: ${createdAt && DateTime.fromMillis(createdAt).toFormat('yyyy LLLL dd')}
+updatedAt: ${updatedAt && DateTime.fromMillis(updatedAt).toFormat('yyyy LLLL d')}
+createdAt: ${createdAt && DateTime.fromMillis(createdAt).toFormat('yyyy LLLL d')}
 jsCreatedAt: ${createdAt}
 jsUpdatedAt: ${updatedAt}
 href: ${href}

@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .flex
+  .flex(style='line-height: 1')
     .flex-grow.text-4xl.text-gray-800 {{ title }}
     .flex-grow.text-right.text-lg.text-gray-600 {{ updatedAt }}
   .text-lg.text-gray-600 {{ subtitle }}
