@@ -7,8 +7,8 @@ This site is hosted on netlify. I tell netlify to build a public repository ever
 ### blog or projects
 Sometimes, I want to work on blog posts or new ideas in private before the polished version gets pushed to the public repo. I can use the following command:
 
-```
-publish <git message> <file1> <file2> <file3> ...
+```shell
+publish "git message>" file1 file2 file3
 publish "blog(publish): my-post" content/blog/my-post.md content/blog/image.png
 ```
 
