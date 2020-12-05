@@ -1,15 +1,20 @@
+<template lang="pug">
+page-layout(:attributes='attributes')
+  template(#body)
+    teafile-js
+</template>
 <script>
 import teafile from '../../content/projects/teafile.md'
 
 export default {
-  layout(context) {
-    return 'default'
+  components: {
+    TeafileJs: teafile.vue.component,
   },
 
-  created() {},
-  render: function(createElement) {
-    console.log(teafile)
-    return createElement(teafile.vue.component, [])
-  }
+  data() {
+    return {
+      attributes: teafile.attributes,
+    }
+  },
 }
 </script>

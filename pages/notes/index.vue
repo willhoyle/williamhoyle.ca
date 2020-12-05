@@ -13,7 +13,7 @@ page-layout(
 
 <script>
 const notes = require('../../util/helpers.js').getPosts(
-  require.context('~/content/notes', true, /\.md$/)
+  require.context('~/content/notes/', true, /\.md$/)
 )
 
 export default {
