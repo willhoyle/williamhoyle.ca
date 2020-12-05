@@ -1,3 +1,5 @@
+---
+---
 ## Grep notes folder
 
 `grep -nr string content/notes`
