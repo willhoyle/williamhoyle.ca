@@ -52,7 +52,6 @@ const getDynamicPaths = urlFilepathTable => {
 
 let content = {
   blog: 'content/blog/**/*.md',
-  snippets: 'content/snippets/*.md'
 }
 if (!isProd) {
   content['drafts'] = 'content/blog/drafts/*.md'

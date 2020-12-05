@@ -1,14 +1,14 @@
 <template lang="pug">
-page-layout(:attributes='{ title: "notes", subtitle: "my personal notes" }')
+page-layout(
+  :attributes='{ title: "notes", subtitle: "my personal notes", updatedAt: mostRecentNoteDate }'
+)
   template(#body)
-    div(:key='note.attributes.href', v-for='note in notes')
-      .text-2xl {{ note.attributes.title }}
-      span.mt-3.bg-blue-700.rounded.text-xs.text-gray-100.p-1.mr-2(
-        :key='tag',
-        v-for='tag in note.attributes.tags || []'
-      ) {{ tag }}
-
+    .mt-10(:key='note.attributes.href', v-for='note in notes')
       component(:is='note.vue.component')
+    //-   span.mt-3.bg-blue-700.rounded.text-xs.text-gray-100.p-1.mr-2(
+    //-     :key='tag',
+    //-     v-for='tag in note.attributes.tags || []'
+    //-   ) {{ tag }}
 </template>
 
 <script>
@@ -22,16 +22,20 @@ export default {
       notes: Object.keys(notes)
         .map((k) => notes[k])
         .sort((a, b) => {
-          if (a.attributes.updatedAt == null) {
+          if (a.attributes.jsUpdatedAt == null) {
             return 1
           }
-          if (b.attributes.updatedAt == null) {
+          if (b.attributes.jsUpdatedAt == null) {
             return -1
           }
-          return b.attributes.updatedAt > a.attributes.updatedAt
+          return b.attributes.jsUpdatedAt > a.attributes.jsUpdatedAt
         }),
     }
   },
-  computed: {},
+  computed: {
+    mostRecentNoteDate() {
+      return this.notes[0].attributes.updatedAt
+    },
+  },
 }
 </script>
