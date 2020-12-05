@@ -7,12 +7,12 @@ This site is hosted on netlify. I tell netlify to build a public repository ever
 ### blog or projects
 Sometimes, I want to work on blog posts or new ideas in private before the polished version gets pushed to the public repo. I can use the following command:
 
-```shell
+```bash
 publish "git message>" file1 file2 file3
 publish "blog(publish): my-post" content/blog/my-post.md content/blog/image.png
 ```
 
-```shell
+```bash
 publish() {
     # commit files I want to sync to public
     git add $2 $3 $4 $5 $6 $7 $8 $9 # maybe one day I'll learn how to slice args in bash lol
@@ -35,7 +35,7 @@ publish() {
 ### notes
 I usually always want to sync my entire notes directory without really thinking about it. For this, I can use the following utility that is in my `.zshrc`:
 `syncnotes` which is just an alias:
-```shell
+```bash
 syncnotes() {
     git add content/notes/
     git commit -m "Sync notes"
