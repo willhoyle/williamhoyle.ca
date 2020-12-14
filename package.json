@@ -9,11 +9,13 @@
         "build": "nuxt build --analyze",
         "start": "nuxt start",
         "generate": "nuxt generate",
+        "process-workouts": "node ./util/process-workouts.js",
         "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
     },
     "dependencies": {
         "express": "^4.17.1",
         "highlight.js": "^9.18.3",
+        "luxon": "^1.25.0",
         "mustache": "^4.0.1",
         "nuxt": "^2.14.7",
         "postcss-import": "^12.0.1",
@@ -22,10 +24,10 @@
     "devDependencies": {
         "@nuxtjs/axios": "^5.12.2",
         "@nuxtjs/tailwindcss": "^1.4.1",
+        "csv-parser": "^2.3.3",
         "eslint-config-prettier": "^3.6.0",
         "eslint-plugin-prettier": "2.6.2",
         "frontmatter-markdown-loader": "^3.6.1",
-        "luxon": "^1.25.0",
         "markdown-it": "^10.0.0",
         "markdown-it-anchor": "^5.3.0",
         "markdown-it-table-of-contents": "^0.4.4",
