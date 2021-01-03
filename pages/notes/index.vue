@@ -4,11 +4,7 @@ page-layout(
 )
   template(#body)
     .mt-10(:key='note.attributes.href', v-for='note in notes')
-      component(:is='note.vue.component')
-    //-   span.mt-3.bg-blue-700.rounded.text-xs.text-gray-100.p-1.mr-2(
-    //-     :key='tag',
-    //-     v-for='tag in note.attributes.tags || []'
-    //-   ) {{ tag }}
+      component.no-border(:is='note.vue.component')
 </template>
 
 <script>
@@ -39,3 +35,11 @@ export default {
   },
 }
 </script>
+
+<style>
+.no-border.markdown-body h1,
+.no-border.markdown-body h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+</style>

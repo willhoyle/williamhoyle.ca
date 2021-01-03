@@ -323,10 +323,12 @@
 
 .markdown-body h2 {
   font-size: 24px;
+  color: rgb(64 71 161);
 }
 
 .markdown-body h3 {
-  font-size: 20px;
+    font-size: 20px;
+    color: rgb(98, 106, 224);
 }
 
 .markdown-body h3,
