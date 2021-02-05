@@ -16,6 +16,9 @@ let posts = getPosts(require.context('~/content/blog/2020/', true, /\.md$/))
 
 let drafts = getPosts(require.context('~/content/blog/drafts/', true, /\.md$/))
 
+const notes = getPosts(
+    require.context('~/content/notes/', true, /\.md$/)
+  )
 export const actions = {
   async nuxtServerInit({ commit }) {
     if (!isProd) {
@@ -25,12 +28,18 @@ export const actions = {
       }
     }
     commit('setPosts', posts)
+    commit('setNotes', notes)
   }
 }
 
 export const mutations = {
   setPosts(state, posts) {
     state.posts = Object.entries(posts).map(([key, val]) => {
+      return { key, attributes: val.attributes }
+    })
+  },
+  setNotes(state, notes) {
+    state.notes = Object.entries(notes).map(([key, val]) => {
       return { key, attributes: val.attributes }
     })
   },
