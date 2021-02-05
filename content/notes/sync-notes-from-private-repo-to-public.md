@@ -37,15 +37,14 @@ I usually always want to sync my entire notes directory without really thinking 
 `syncnotes` which is just an alias:
 ```bash
 syncnotes() {
-    git add content/notes/
-    git commit -m "Sync notes"
-    git stash
+    git add .
+    # save everything
+    git commit -m "Syncing notes - saving all"
     git checkout master
     git checkout private -- content/notes/
     git commit -m "Update notes for public repo"
     git push origin master
     git checkout private
-    git stash apply
 }
 ```
 No error handling but whatever, it works
