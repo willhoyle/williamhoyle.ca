@@ -1,11 +1,11 @@
 <template lang="pug">
 .flex.flex-wrap
   .w-full.px-5.mb-2
-    .text-xl.text-gray-600 Hi, I'm William 👋
+    .text-xl.text-gray-600.text-center(class='md:text-left') Hi, I'm William 👋
   .w-full.px-5.mb-5(class='lg:w-1/2 md:mb-0')
-    .text-3xl.text-gray-800 Posts
+    .text-3xl.text-gray-800 Blog
     ul
-      li(v-for='post in posts')
+      li.list-disc(v-for='post in posts')
         nuxt-link(:to='post.attributes.href')
           span.front-page-links {{ post.attributes.title }}
   .w-full.px-5.mb-5(class='lg:w-1/2 md:mb-0')

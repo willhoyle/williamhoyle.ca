@@ -16,7 +16,8 @@
           class='w-1/2 md:w-full hover:text-gray-800'
         )
           nuxt-link(:to='link.to', link-active-class='link-active') {{ link.label }}
-        a.nuxt-link-active.pt-2(class='md:pt-10', href='mailto:will.hoyle@gmail.com') ✉️ Say hi
+      .w-full.pt-5(class='md:pt-10')
+        a.nuxt-link-active(class='md:text-left', href='mailto:will.hoyle@gmail.com') ✉️ Say hi
       .w-full.py-2(class='md:hidden')
         //- hr  
       //- div(ref="table-container" class="hidden md:block").sticky.top-0.markdown-body.mt-24.pt-8
@@ -77,8 +78,8 @@ export default {
       links: [
         { to: '/blog', label: 'blog' },
         { to: '/fitness', label: 'fitness' },
-        { to: '/garden', label: 'garden' },
-        { to: '/links', label: 'links' },
+        // { to: '/garden', label: 'garden' },
+        // { to: '/links', label: 'links' },
         { to: '/notes', label: 'notes' },
         { to: '/projects', label: 'projects' },
       ],

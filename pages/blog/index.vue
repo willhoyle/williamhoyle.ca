@@ -1,18 +1,27 @@
 <template lang="pug">
-  div
-    | blog home page. show index
-    //- template(v-for="link in links")
+div
+  .w-full.px-5.mb-5(class='lg:w-1/2 md:mb-0')
+    .text-3xl.text-gray-800 Blog
+    ul
+      li.list-disc.mb-2(v-for='post in posts')
+        nuxt-link.leading-none(:to='post.attributes.href')
+          span.front-page-links {{ post.attributes.title }}
+        .text-gray-600.text-sm.leading-none {{ post.attributes.createdAt }}
 </template>
 
 <script>
 export default {
-  asyncData({ payload }) {
-    // if (payload) {
-    //   links:
-    // }
-    // return {
-    //   links: payload.links
-    // }
-  }
+  computed: {
+    posts() {
+      return this.$store.state.posts
+        .filter((p) => Object.keys(p.attributes).length)
+        .sort((a, b) => {
+          return (
+            new Date(b.attributes.publishedAt).getTime() -
+            new Date(a.attributes.publishedAt).getTime()
+          )
+        })
+    },
+  },
 }
 </script>
