@@ -49,5 +49,3 @@ syncnotes() {
 }
 ```
 No error handling but whatever, it works
-
-Before pages and updates to my public site get pushed to my public remote repo
