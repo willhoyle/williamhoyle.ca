@@ -1,6 +1,6 @@
 ---
 ---
-## Css: Adjacent sibling selectors
+## css: Adjacent sibling selectors
 
 [https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator)
 
