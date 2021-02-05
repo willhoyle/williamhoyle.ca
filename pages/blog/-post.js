@@ -4,7 +4,7 @@ const posts = require('../../util/helpers.js').getPosts(
 
 export default {
   layout(context) {
-    return 'default'
+    return 'blog'
   },
   async asyncData({ params, route }) {
     let post = route.path
@@ -21,8 +21,8 @@ export default {
   created() {},
   render: function(createElement) {
     if (!posts[this.post]) {
-      return createElement('div')
+      return createElement('div', {class: 'blog'})
     }
-    return createElement(posts[this.post].vue.component, [])
+    return createElement(posts[this.post].vue.component, {class: 'blog'}, [])
   }
 }
