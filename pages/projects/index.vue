@@ -2,15 +2,15 @@
 .reset
   .text-4xl.text-gray-800.mb-5 Projects
   .grid.gap-x-8.gap-y-4.grid-cols-3
-    .w-full.rounded.border.shadow.p-5.col-span-2
-      .preview(class='xs:hidden sm:hidden lg:block')
+    .w-full.rounded.border.shadow.p-5.col-span-3(class='md:col-span-2 md:mb-0')
+      .preview(class='')
         a(href='/fpp.png')
           img(src='/fpp.png')
       .text-xl.text-gray-800 
         a.front-page-links(href='https://financialcpp.com') financialcpp
       .text-gray-800 high performance c++ stock market backtester with nodejs bindings
-    .w-full.rounded.border.shadow.p-5
-      .preview(class='xs:hidden sm:hidden lg:block')
+    .w-full.rounded.border.shadow.p-5.col-span-3(class='md:col-span-1 md:mb-0')
+      .preview(class='')
         nuxt-link(to='/projects/teafile')
           img(src='/teafile.png')
       .text-xl.text-gray-800 

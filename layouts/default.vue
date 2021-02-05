@@ -16,11 +16,11 @@
           class='w-1/2 md:w-full hover:text-gray-800'
         )
           nuxt-link(:to='link.to', link-active-class='link-active') {{ link.label }}
-      .w-full.pt-5(class='md:pt-10')
+      .w-full.pt-0(class='md:pt-10 xs:hidden md:block')
         a.nuxt-link-active(class='md:text-left', href='mailto:will.hoyle@gmail.com') ✉️ Say hi
       .w-full.py-2(class='md:hidden')
         //- hr  
-      //- div(ref="table-container" class="hidden md:block").sticky.top-0.markdown-body.mt-24.pt-8
+    //- div(ref="table-container" class="hidden md:block").sticky.top-0.markdown-body.mt-24.pt-8
       //-   div.table-of-contents-title Table of Contents
     .lt-content
       .text-gray-800.mx-5(class='md:mx-0')
