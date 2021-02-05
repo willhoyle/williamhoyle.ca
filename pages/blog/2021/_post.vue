@@ -1,4 +1,4 @@
 <script>
-import post from '../blog/-post.js'
+import post from '../-post.js'
 export default post
 </script>

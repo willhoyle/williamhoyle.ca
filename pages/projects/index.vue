@@ -1,10 +1,19 @@
 <template lang="pug">
-    div
-        div.text-4xl.text-gray-800.mb-5 Projects
-        div.flex.flex-wrap
-            div(class="md:w-1/2 w-full").rounded.border.shadow.p-5
-                div.text-xl.text-gray-800 
-                    nuxt-link(to="/projects/teafile").front-page-links teafile.js
-                div.text-gray-800 javascript library for teafile format to store time series as binary flat files
-            
+.reset
+  .text-4xl.text-gray-800.mb-5 Projects
+  .grid.gap-x-8.gap-y-4.grid-cols-3
+    .w-full.rounded.border.shadow.p-5.col-span-2
+      .preview(class='xs:hidden sm:hidden lg:block')
+        a(href='/fpp.png')
+          img(src='/fpp.png')
+      .text-xl.text-gray-800 
+        a.front-page-links(href='https://financialcpp.com') financialcpp
+      .text-gray-800 high performance c++ stock market backtester with nodejs bindings
+    .w-full.rounded.border.shadow.p-5
+      .preview(class='xs:hidden sm:hidden lg:block')
+        nuxt-link(to='/projects/teafile')
+          img(src='/teafile.png')
+      .text-xl.text-gray-800 
+        nuxt-link.front-page-links(to='/projects/teafile') teafile.js
+      .text-gray-800 javascript library for teafile format to store time series as binary flat files
 </template>

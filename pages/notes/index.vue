@@ -1,6 +1,6 @@
 <template lang="pug">
-page-layout(
-  :attributes='{ title: "notes", subtitle: "my personal notes", updatedAt: mostRecentNoteDate }'
+page-layout.blog(
+  :attributes='{ title: "notes", subtitle: "collection of ideas and notes", updatedAt: mostRecentNoteDate }'
 )
   template(#body)
     .mt-10(:key='note.attributes.href', v-for='note in notes')
@@ -23,12 +23,12 @@ export default {
         .map((k) => notes[k])
         .sort((a, b) => {
           if (a.attributes.jsUpdatedAt == null) {
-            return 1
-          }
-          if (b.attributes.jsUpdatedAt == null) {
             return -1
           }
-          return b.attributes.jsUpdatedAt > a.attributes.jsUpdatedAt
+          if (b.attributes.jsUpdatedAt == null) {
+            return 1
+          }
+          return b.attributes.jsUpdatedAt < a.attributes.jsUpdatedAt
         }),
     }
   },
