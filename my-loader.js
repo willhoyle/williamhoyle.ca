@@ -24,7 +24,6 @@ module.exports = async function(source, map, meta) {
     .slice(0, -1)
     .join('.')
 
-    
   // enrich the yaml frontmatter before it goes through the loader
   // then, we'll be able to access this info inside our templates
   source = source.replace(

@@ -28,7 +28,10 @@ export default {
           if (b.attributes.jsUpdatedAt == null) {
             return 1
           }
-          return b.attributes.jsUpdatedAt < a.attributes.jsUpdatedAt
+          return (
+            new Date(b.attributes.jsUpdatedAt).getTime() >
+            new Date(a.attributes.jsUpdatedAt).getTime()
+          )
         }),
     }
   },
