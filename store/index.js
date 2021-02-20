@@ -12,10 +12,10 @@ export const state = () => {
 
 import { getPosts } from '../util/helpers'
 
-let posts = [
+let posts = {
     ...getPosts(require.context('~/content/blog/2020/', true, /\.md$/)),
     ...getPosts(require.context('~/content/blog/2021/', true, /\.md$/))
-]
+}
 
 let drafts = getPosts(require.context('~/content/blog/drafts/', true, /\.md$/))
 
