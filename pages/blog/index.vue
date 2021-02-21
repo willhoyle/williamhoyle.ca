@@ -17,8 +17,8 @@ export default {
         .filter((p) => Object.keys(p.attributes).length)
         .sort((a, b) => {
           return (
-            new Date(b.attributes.publishedAt).getTime() -
-            new Date(a.attributes.publishedAt).getTime()
+            new Date(b.attributes.jsCreatedAt).getTime() -
+            new Date(a.attributes.jsCreatedAt).getTime()
           )
         })
     },
