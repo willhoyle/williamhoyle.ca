@@ -28,7 +28,7 @@ All software has a learning curve. My aim is to reduce it by teaching as much as
 A prime example of good documentation is vuejs. The onboarding process is quick and all tutorials have real examples and snippets that can be pasted into your own project. It makes it a joy to work with. There's value in making a tool nice to work with. I'll be looking to emulate a similar experience with my library.
 
 ### eatplants.app
-**[eatplants.app](eatplants.app)**
+**[eatplants.app](https://eatplants.app)**
 ![eatplants.app](/eatplants.png)
 
 A food-tracking app, without the food tracking. If you need something that logs food entries, this isn't for you. Use a traditional food tracker instead.
@@ -136,7 +136,7 @@ What a .gue file could look like:
 </style>
 ```
 ### Continuum 2020
-[continuum2020.ca](continuum2020.ca)
+[continuum2020.ca](https://continuum2020.ca)
 ![/continuum.png](/continuum.png)
 
 Remake of the greatest massively multiplayer game of all time, Subspace/Continuum. I joined a game-off on itch.io in October to motivate me to actually work on this. I managed to get something up and running with Matter.js for the canvas and physics, and WebRTC for the game packets. I haven't had time to reach a fully functional game and user system but the plan is:
