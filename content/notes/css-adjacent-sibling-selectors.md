@@ -20,11 +20,11 @@ It creates the following html:
 
 ```html
 <p>some long sentence</p>
-<ol>
+<ul>
     <li>list item 1</li>
     <li>list item 2</li>
     <li>list item 3</li>
-</ol>
+</ul>
 ```
 
 ### Problem
