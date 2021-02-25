@@ -31,7 +31,7 @@ A prime example of good documentation is vuejs. The onboarding process is quick 
 **[eatplants.app](https://eatplants.app)**
 ![eatplants.app](/eatplants.png)
 
-A food-tracking app, without the food tracking. If you need something that logs food entries, this isn't for you. Use a traditional food tracker instead.
+A plant-based food-tracking app, without the food tracking. If you need something that logs food entries, this isn't for you. Use a traditional food tracker instead.
 
 No one likes tracking food. It's so tedious and boring. It's annoying trying to calculate portions for a big meal (recipes can help capture common food combinations I guess). You always feel like you're playing catchup.
 
