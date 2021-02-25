@@ -59,8 +59,6 @@ if (!isProd) {
 
 const dynamicRoutes = getDynamicPaths(content)
 
-console.log(dynamicRoutes)
-
 module.exports = {
   target: 'static',
 

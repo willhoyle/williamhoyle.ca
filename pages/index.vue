@@ -12,7 +12,7 @@
     .text-3xl.text-gray-800 What I'm working on right now
     .w-full.rounded.border.shadow.p-5
       .preview(class='xs:hidden lg:block')
-        a(href='/fpp.png')
+        a(href='https://financialcpp.com')
           img(src='/fpp.png')
       .text-xl.text-gray-800 
         a.front-page-links(href='https://financialcpp.com') financialcpp
@@ -31,8 +31,8 @@ export default {
         .filter((p) => Object.keys(p.attributes).length)
         .sort((a, b) => {
           return (
-            new Date(b.attributes.publishedAt).getTime() -
-            new Date(a.attributes.publishedAt).getTime()
+            new Date(b.attributes.jsCreatedAt).getTime() -
+            new Date(a.attributes.jsCreatedAt).getTime()
           )
         })
     },
