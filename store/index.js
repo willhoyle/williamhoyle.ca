@@ -12,11 +12,16 @@ export const state = () => {
 
 import { getPosts } from '../util/helpers'
 
-let posts = getPosts(require.context('~/content/blog/2020/', true, /\.md$/))
+let posts = {
+    ...getPosts(require.context('~/content/blog/2020/', true, /\.md$/)),
+    ...getPosts(require.context('~/content/blog/2021/', true, /\.md$/))
+}
 
 let drafts = getPosts(require.context('~/content/blog/drafts/', true, /\.md$/))
 
-let snippets = getPosts(require.context('~/content/snippets/', true, /\.md$/))
+const notes = getPosts(
+    require.context('~/content/notes/', true, /\.md$/)
+  )
 export const actions = {
   async nuxtServerInit({ commit }) {
     if (!isProd) {
@@ -26,7 +31,7 @@ export const actions = {
       }
     }
     commit('setPosts', posts)
-    commit('setSnippets', snippets)
+    commit('setNotes', notes)
   }
 }
 
@@ -36,11 +41,11 @@ export const mutations = {
       return { key, attributes: val.attributes }
     })
   },
-  setSnippets(state, snippets) {
-    state.snippets = Object.entries(snippets).map(([key, val]) => {
+  setNotes(state, notes) {
+    state.notes = Object.entries(notes).map(([key, val]) => {
       return { key, attributes: val.attributes }
     })
-  }
+  },
 }
 
 export const getters = {

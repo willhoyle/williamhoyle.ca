@@ -2,7 +2,7 @@
 div
   .flex(style='line-height: 1')
     .flex-grow.text-4xl.text-gray-800 {{ title }}
-    .flex-grow.text-right.text-lg.text-gray-600 {{ updatedAt }}
+    .flex-grow.text-right.text-2lg.text-gray-600 {{ updatedAt }}
   .text-lg.text-gray-600 {{ subtitle }}
   slot(name='body')
 </template>

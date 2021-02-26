@@ -29,7 +29,7 @@ const md = new MarkdownIt({
 
 md.use(require('markdown-it-anchor'))
 md.use(require('markdown-it-table-of-contents'), {
-  includeLevel: [1, 2, 3]
+  includeLevel: [1, 2, 3, 4]
 })
 
 let isProd = process.env.NODE_ENV == 'production'
@@ -58,8 +58,6 @@ if (!isProd) {
 }
 
 const dynamicRoutes = getDynamicPaths(content)
-
-console.log(dynamicRoutes)
 
 module.exports = {
   target: 'static',

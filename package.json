@@ -14,7 +14,8 @@
         "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
     },
     "dependencies": {
-        "highlight.js": "^9.18.5",
+        "express": "^4.17.1",
+        "highlight.js": "^10.5.0",
         "luxon": "^1.25.0",
         "mustache": "^4.1.0",
         "nord-highlightjs": "^0.1.0",

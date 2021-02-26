@@ -16,9 +16,11 @@
           class='w-1/2 md:w-full hover:text-gray-800'
         )
           nuxt-link(:to='link.to', link-active-class='link-active') {{ link.label }}
+      .w-full.pt-0(class='md:pt-10 xs:hidden md:block')
+        a.nuxt-link-active(class='md:text-left', href='mailto:will.hoyle@gmail.com') ✉️ Say hi
       .w-full.py-2(class='md:hidden')
         //- hr  
-      //- div(ref="table-container" class="hidden md:block").sticky.top-0.markdown-body.mt-24.pt-8
+    //- div(ref="table-container" class="hidden md:block").sticky.top-0.markdown-body.mt-24.pt-8
       //-   div.table-of-contents-title Table of Contents
     .lt-content
       .text-gray-800.mx-5(class='md:mx-0')
@@ -34,12 +36,17 @@
           .w-full
             | William Hoyle
             .mt-1
-              img.inline.fill(src='/location-pin.svg')
+              img.inline.fill.mr-2(src='/location-pin.svg')
               | Toronto, Canada
           .w-full.mt-1
             a.nuxt-link-active(href='https://github.com/willhoyle') 
-              img.w-6.h-6.mr-2.inline(src='/GitHub-Mark/PNG/GitHub-Mark-32px.png')
+              img.w-6.h-6.mr-2.inline(
+                src='/GitHub-Mark/PNG/GitHub-Mark-32px.png'
+              )
               | Github
+            .mt-1
+              img.inline.fill.mr-2(src='/email.svg')
+              a.nuxt-link-active(href='mailto:will.hoyle@gmail.com') Say hi 🙂
       .w-full 
         hr
       .flex.flex-wrap.w-full.mt-3
@@ -51,7 +58,9 @@
           .w-full
             a.nuxt-link-active(href='https://tailwindcss.com') tailwindcss
           .w-full
-            a.nuxt-link-active(href='https://github.com/hmsk/frontmatter-markdown-loader') frontmatter-markdown-loader
+            a.nuxt-link-active(
+              href='https://github.com/hmsk/frontmatter-markdown-loader'
+            ) frontmatter-markdown-loader
 
   //- div
   //-   .flex.mb-4.h-auto
@@ -68,11 +77,11 @@ export default {
     return {
       links: [
         { to: '/blog', label: 'blog' },
+        { to: '/fitness', label: 'fitness' },
+        // { to: '/garden', label: 'garden' },
+        // { to: '/links', label: 'links' },
         { to: '/notes', label: 'notes' },
         { to: '/projects', label: 'projects' },
-        { to: '/links', label: 'links' },
-        { to: '/fitness', label: 'fitness' },
-        { to: '/garden', label: 'garden' },
       ],
     }
   },
