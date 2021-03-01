@@ -42,7 +42,7 @@ div(:class='{ "w-1/2": dense }')
             .mt-1.text-lg.font-bold.text-black
               span {{ week.totalDistance | km }}
               span.ml-2 km
-          .col-span-2.h-2(v-else) 
+          .col-span-2.h-2(v-else)
           template(v-for='day in week.week')
             template(v-if='day')
               .bg-green-300(:style='styles(day.totalDistance)')
@@ -163,7 +163,6 @@ export default {
       second: 59,
       millisecond: 999,
     })
-
     let interval = Interval.fromDateTimes(firstDate, lastDate)
 
     let weekIntervals = interval.splitBy(Duration.fromObject({ weeks: 1 }))
@@ -217,9 +216,10 @@ export default {
         year--
         return week
       }
+      console.log(week.totalDistance)
       return week
     })
-
+    console.log(weeks.length)
     this.weeks = weeks
   },
 }
