@@ -1,9 +1,10 @@
 <template lang="pug">
 div
   .w-full.px-5.mb-5(class='lg:w-1/2 md:mb-0')
-    .text-3xl.text-gray-800 Blog
+    .text-4xl.text-gray-800.leading-none Blog
+    .text-lg.text-gray-600 Posts where I explore different ideas and thoughts
     ul
-      li.list-disc.mb-2(v-for='post in posts')
+      li.mt-6(v-for='post in posts')
         nuxt-link.leading-none(:to='post.attributes.href')
           span.front-page-links {{ post.attributes.title }}
         .text-gray-600.text-sm.leading-none {{ post.attributes.createdAt }}

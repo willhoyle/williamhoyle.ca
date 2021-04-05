@@ -685,6 +685,10 @@
   box-sizing: content-box;
   max-width: 100%;
 }
+.markdown-body img + p {
+  background-color: #e2e8f0;
+  line-height: normal;
+}
 
 .markdown-body img[align='right'] {
   padding-left: 20px;

@@ -1,12 +1,12 @@
 ---
-title: ideas and projects in 2021
+title: Database design for eatplants.app
 ---
-# ideas and projects in 2021
+# Database design for eatplants.app
 
-All ideas and projects on my mind
+Designing the database structure for my plant-based nutrient optimizing app
 
 [[toc]]
-## Projects
+## Intro
 ### Financialcpp
 **[financialcpp.com](https://financialcpp.com)**
 ![financialcpp.com](/fpp.png)

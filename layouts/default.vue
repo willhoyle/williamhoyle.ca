@@ -78,7 +78,7 @@ export default {
       links: [
         { to: '/blog', label: 'blog' },
         { to: '/fitness', label: 'fitness' },
-        // { to: '/garden', label: 'garden' },
+        { to: '/garden', label: 'garden' },
         // { to: '/links', label: 'links' },
         { to: '/notes', label: 'notes' },
         { to: '/projects', label: 'projects' },

@@ -3,8 +3,8 @@ import Vue from 'vue'
 import PageLayout from '~/components/PageLayout.vue'
 Vue.component('PageLayout', PageLayout)
 
-// import Card from '~/components/Card.vue'
-// Vue.component("FrontPageCard", Card)
+import PlantCard from '~/components/PlantCard.vue'
+Vue.component("PlantCard", PlantCard)
 
 // import TableOfContents from '~/components/TableOfContents.vue'
 // Vue.component("TableOfContents", TableOfContents)
