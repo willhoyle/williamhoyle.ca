@@ -355,6 +355,10 @@
   margin-top: 0;
 }
 
+.markdown-body p code {
+    background-color: #f6f8fa;
+  }
+
 .markdown-body blockquote {
   margin: 0;
 }
@@ -524,7 +528,7 @@
 .markdown-body pre,
 .markdown-body table,
 .markdown-body ul {
-  margin-bottom: 8px;
+  margin-bottom: 30px;
   margin-top: 0;
 }
 

@@ -1,6 +1,6 @@
 <template lang="pug">
 .reset
-  .text-4xl.text-gray-800.mb-5 Projects
+  .text-4xl.text-gray-800.mb-5 projects
   .grid.gap-x-8.gap-y-4.grid-cols-3.text-xl
     .w-full.rounded.border.shadow.p-5.col-span-3(
       class='md:col-span-2 md:mb-0 hover:shadow-md'

@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   .text-4xl.text-gray-800.leading-none garden
-  .text-lg.text-gray-600 Notes on how to take care of my garden
+  .text-lg.text-gray-600 notes on how to take care of my garden
 
   .markdown-body
     p.
@@ -35,9 +35,9 @@ div
       )
         h3 Notes
         h4 2020
-        p I lightly trimmed these guys early summer (late June). I just moved in to the house, I think this trim happened too late.
+        p I lightly trimmed these guys early summer (late June). I had just moved in to the house. I think this trim happened too late.
 
-        p One thing to keep in mind is Juniper plants don't grow new foliage on old bark. Consequently, you have to be mindful when giving them a haircut. You don't want to end up with irrepareable holes on the canvas.
+        p One thing to keep in mind is Juniper plants don't grow new foliage on old bark. Consequently, you have to be mindful when giving them a haircut. You don't want to end up with irrepareable holes in the canvas.
       plant-card.col-span-6(
         class='sm:col-span-2',
         name='Snowdrops',

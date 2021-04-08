@@ -2,12 +2,14 @@
 title: Code sprint for eatplants.app
 ---
 # Code sprint for eatplants.app
+[[date]]
 
-[eatplants.app](https://eatplants.app) is a plant-based food tracking app without the food tracking
+<!-- [eatplants.app](https://eatplants.app) is a plant-based food tracking app without the food tracking -->
+<u><strong style="color: rgb(107 134 104 / 80%);">eatplants</strong>.app</u> is a plant-based food tracking app without the food tracking
 
 [[toc]]
 
-Check out the first prototype here that came out of this sprint: [eatplants.app](https://eatplants.app)
+<!-- Check out the first prototype here that came out of this sprint: [eatplants.app](https://eatplants.app) -->
 ## Intro
 The goal of this exercise is to go from conceptual stage (ie. "just an idea") to an actual working prototype in a day. It's not going to be perfect but it's nice to just build stuff sometimes without necessarily worrying that it's the perfect design.
 
@@ -15,7 +17,7 @@ The goal of this exercise is to go from conceptual stage (ie. "just an idea") to
 What do I want this app to do for me? What problem am I solving for myself?
 
 **Requirements**: 
-- I want to be able to go to eatplants.app
+- I want to be able to go to <strong style="color: rgb(107 134 104 / 80%);">eatplants</strong>.app
 - Browse a collection of recipes and foods I will eat
 - Collections are an ensemble of collections, recipes, and food items
 - Collections in theory should be a cohesive group of food items (to simplify grocery shopping)

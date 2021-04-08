@@ -1,6 +1,7 @@
 <template lang="pug">
 div
-  .text-4xl.text-gray-800.mb-5 Fitness
+  .text-4xl.text-gray-800.leading-none fitness
+    .text-lg.text-gray-600 tracking my fitness goals and progress
   .flex.flex-wrap
     .w-full.rounded(class='md:w-1/2')
       .text-xl.text-gray-800 

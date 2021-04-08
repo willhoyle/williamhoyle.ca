@@ -3,6 +3,7 @@ title: 'teafile'
 ---
 
 # teafile
+[[date]]
 
 teafile - pure javascript library for the teafile format
 

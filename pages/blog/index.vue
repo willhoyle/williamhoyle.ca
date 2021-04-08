@@ -1,8 +1,8 @@
 <template lang="pug">
 div
   .w-full.px-5.mb-5(class='lg:w-1/2 md:mb-0')
-    .text-4xl.text-gray-800.leading-none Blog
-    .text-lg.text-gray-600 Posts where I explore different ideas and thoughts
+    .text-4xl.text-gray-800.leading-none blog
+    .text-lg.text-gray-600 exploring different ideas and thoughts
     ul
       li.mt-6(v-for='post in posts')
         nuxt-link.leading-none(:to='post.attributes.href')

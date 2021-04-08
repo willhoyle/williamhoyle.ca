@@ -3,8 +3,12 @@
   @click='popup',
   :class='modal && "fullscreen"'
 )
-  div
-    img.h-48.w-full.object-cover.rounded-t-md(:src='src', :alt='alt')
+  div(:class='modal && "overflow-y-auto"')
+    img.object-cover.rounded-t-md(
+      :src='src',
+      :alt='alt',
+      :class='modal ? "h-3/4" : "h-48 w-full"'
+    )
   .p-3
     .text-2xl.font-semibold.leading-none {{ name }}
     .text-lg.text-gray-600.leading-4.mb-2 Flowers: {{ flowers ? flowers : "Not documented" }}
@@ -29,7 +33,7 @@ export default {
   },
   methods: {
     popup() {
-      this.modal = !this.modal
+      this.modal = false
     },
   },
 }
