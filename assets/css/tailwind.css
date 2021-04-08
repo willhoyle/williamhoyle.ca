@@ -2,11 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import 'charts.css/dist/charts.css';
+
 /* purgecss start ignore */
 @import 'highlight.js/styles/atelier-sulphurpool-light.css';
 /* @import 'nord-highlightjs/dist/nord.css'; */
 
 @import './markdown.css';
+
 
 html {
   @apply font-sans;

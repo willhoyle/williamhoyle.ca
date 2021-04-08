@@ -2,10 +2,16 @@
 div
   .text-4xl.text-gray-800.leading-none fitness
     .text-lg.text-gray-600 tracking my fitness goals and progress
-  .flex.flex-wrap
-    .w-full
-    .w-full
-      .grid.grid-cols-9.text-gray-500
+  .flex.flex-wrap.mt-5
+    .w-full.my-3
+      button.button.inline.mr-3(
+        @click='activeView = view',
+        :key='view',
+        v-for='view in views',
+        :class='view == activeView && "active"'
+      ) {{ view }}
+    .w-full(v-if='activeView == "Calendar View"')
+      .grid.grid-cols-9.text-gray-700
         .col-span-9.mb-1.stick-bar-1
           hr.stick
         .col-span-2.stick
@@ -37,8 +43,8 @@ div
             .col-span-9.mt-1.mb-3.stick-year-bar-2
               hr
           .col-span-2.h-48.leading-none(v-if='!dense')
-            .text-black.font-black.text-lg {{ week.label }}
-            .mt-8.text-gray-500.text-sm Total Distance
+            .text-black.text-lg {{ label(week.interval) }}
+            .mt-5.text-gray-500.text-sm Total Distance
             .mt-1.text-lg.font-bold.text-black
               span {{ week.totalDistance | km }}
               span.ml-2 km
@@ -49,8 +55,28 @@ div
             template(v-else)
               .flex
 
-    .w-full
+    .w-full(v-else-if='activeView == "Charts"')
       hr
+      .grid.grid-cols-9
+        template(v-for='week in weeks')
+          template(v-if='week.year')
+            .col-span-9.text-center.text-xl.font-bold.mt-5
+              | {{ week.year }}
+          .col-span-3.p-5.m-5.h-48 
+            .text-center.my-3.text-gray-700.text-lg {{ label(week.interval) }}
+            table#my-chart.charts-css.column.data-spacing-5.show-primary-axis.hide-data.show-data-axes.show-data-on-hover.show-labels
+              caption Week
+              thead
+                tr
+                  th(scope='col') Year
+                  th(scope='col') Progress
+              tbody
+                tr(v-for='(day, idx) in week.week')
+                  th(scope='row') {{ weekdayLabel[idx + 1] }}
+                  td(
+                    :style='`--size: ${(day && day.totalDistance / 60000) || 0.0}`'
+                  )
+                    span.data {{ (day && Math.round(day.totalDistance / 1000)) || 0 }}km
 </template>
 
 <script>
@@ -60,8 +86,19 @@ import { DateTime, Duration, Interval } from 'luxon'
 export default {
   data() {
     return {
+      activeView: 'Charts',
+      views: ['Calendar View', 'Charts'],
       weeks: [],
       dense: false,
+      weekdayLabel: {
+        1: this.createWeekdayLabel(1),
+        2: this.createWeekdayLabel(2),
+        3: this.createWeekdayLabel(3),
+        4: this.createWeekdayLabel(4),
+        5: this.createWeekdayLabel(5),
+        6: this.createWeekdayLabel(6),
+        7: this.createWeekdayLabel(7),
+      },
     }
   },
   computed: {
@@ -80,6 +117,20 @@ export default {
     },
   },
   methods: {
+    createWeekdayLabel(idx) {
+      return DateTime.fromObject({ weekday: idx }).toFormat('ccc')
+    },
+    label(interval) {
+      if (this.dense) {
+        return `${interval.start.toFormat('MMM dd')} - ${interval.end.toFormat(
+          'MMM dd'
+        )}`
+      } else {
+        return `${interval.start.toFormat('MMM dd')} - ${interval.end
+          .minus({ day: 1 })
+          .toFormat('MMM dd')}`
+      }
+    },
     scale(num) {
       let scale = (num / this.max) * 100
       if (this.dense) {
@@ -99,17 +150,6 @@ export default {
     },
   },
   filters: {
-    label(interval) {
-      if (this.dense) {
-        return `${interval.start.toFormat('MMM dd')} - ${interval.end.toFormat(
-          'MMM dd'
-        )}`
-      } else {
-        return `${interval.start.toFormat('MMM dd')} - ${interval.end.toFormat(
-          'MMM dd'
-        )}`
-      }
-    },
     km(meters) {
       if (!meters) {
         return 0
@@ -198,6 +238,7 @@ export default {
 
           totalDistance += run.distanceM || 0
         } else {
+          runIdx--
           loop = false
         }
       }
@@ -216,10 +257,8 @@ export default {
         year--
         return week
       }
-      console.log(week.totalDistance)
       return week
     })
-    console.log(weeks.length)
     this.weeks = weeks
   },
 }
@@ -238,5 +277,30 @@ export default {
 .stick-bar-2 {
   position: sticky;
   top: 37px;
+}
+.button {
+  @apply bg-white text-2xl  border-2 rounded-lg p-3 leading-5 border-purple-300 shadow-sm;
+}
+.button.active {
+  @apply bg-purple-300;
+}
+.button.active:focus {
+  @apply outline-none;
+}
+.area {
+  height: 350px;
+  margin: 0;
+}
+#my-chart {
+  --color-1: rgba(230, 30, 30, 0.2);
+  --color-2: rgba(230, 30, 30, 0.4);
+  --color-3: rgba(230, 30, 30, 0.5);
+  --color-4: rgba(230, 30, 30, 0.6);
+  --color-5: rgba(230, 30, 30, 1);
+  --color-6: rgba(230, 30, 30, 1);
+  --color-7: rgba(230, 30, 30, 0.8);
+  --color-8: rgba(230, 30, 30, 0.6);
+  --color-9: rgba(230, 30, 30, 0.4);
+  --color-10: rgba(230, 30, 30, 0.2);
 }
 </style>

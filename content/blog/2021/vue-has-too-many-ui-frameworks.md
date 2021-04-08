@@ -132,4 +132,4 @@ With everything setup correctly, you only pay for what you use.
 
 I don't think being able to override the CSS of existing UI frameworks is good enough. We need a generic UI framework library. It should expose generic class names on its HTML elements like `.generic-button` or `.generic-modal`. Each CSS framework could then target those generic class names. 
 
-In a way, doing it this way would take us back to how it all began regarding HTML and CSS. They are decoupled from the logic written in the JavaScript. I hope we can find a way to make this work!
+In a way, doing it this way would take us back to how it all began regarding HTML and CSS. They are decoupled from the logic written in JavaScript. I hope we can find a way to make this work!
