@@ -45,3 +45,11 @@ export default {
   },
 }
 </script>
+
+<style>
+.no-border.markdown-body h1,
+.no-border.markdown-body h2 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+</style>
