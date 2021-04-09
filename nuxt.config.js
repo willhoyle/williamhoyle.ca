@@ -3,7 +3,7 @@ const pkg = require('./package')
 import path from 'path'
 import glob from 'glob'
 
-import Mode from 'frontmatter-markdown-loader/mode'
+import Mode from 'frontmatter-markdown-loader/mode.js'
 
 import hljs from 'highlight.js'
 
