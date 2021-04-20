@@ -29,7 +29,7 @@ What do I want this app to do for me? What problem am I solving for myself?
 - No food tracking. Everyone hates it.  Encourage intuitive eating and **sustainable lifestyle**
 - Ideally, this site is collaborative. Other users can create collections and share the publicly
 - The ultimate goal is to reduce the mental burden in planning plant-based meals, deciding what I need to buy, etc...
-- Discourage long-winded SEO garbage recipe pages. You know the ones. One picture, small description. I hate these bloated Wordpress blogs with a passion
+- Discourage long-winded SEO garbage recipe pages. You know the ones. One picture, small description. Short and simple. I hate these bloated Wordpress blogs with a passion.
 
 ## Step 2: Scaffolding
 This is by far the worse part of any project. I need to gather and setup all the software components before even starting.
