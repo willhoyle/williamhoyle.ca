@@ -57,12 +57,14 @@ div
 
     .w-full(v-else-if='activeView == "Charts"')
       hr
-      .grid.grid-cols-9
+      .grid.grid-cols-1(class='md:grid-cols-2 xl:grid-cols-3')
         template(v-for='week in weeks')
           template(v-if='week.year')
-            .col-span-9.text-center.text-xl.font-bold.mt-5
+            .col-span-1.text-center.text-xl.font-bold.mt-5(
+              class='md:col-span-2 xl:col-span-3'
+            )
               | {{ week.year }}
-          .col-span-3.p-5.m-5.h-48 
+          .col-span-1.py-5.px-3.h-48
             .text-center.my-3.text-gray-700.text-lg {{ label(week.interval) }}
             table#my-chart.charts-css.column.data-spacing-5.show-primary-axis.hide-data.show-data-axes.show-data-on-hover.show-labels
               caption Week
