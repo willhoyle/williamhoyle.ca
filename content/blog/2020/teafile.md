@@ -1,8 +1,8 @@
 ---
-title: 'teafile'
+title: 'Teafile'
 ---
 
-# teafile
+# Teafile
 [[date]]
 
 teafile - pure javascript library for the teafile format

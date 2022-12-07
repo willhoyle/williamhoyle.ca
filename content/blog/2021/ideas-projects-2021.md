@@ -1,7 +1,7 @@
 ---
-title: ideas and projects in 2021
+title: Ideas and projects in 2021
 ---
-# ideas and projects in 2021
+# Ideas and projects in 2021
 [[date]]
 
 All ideas and projects on my mind

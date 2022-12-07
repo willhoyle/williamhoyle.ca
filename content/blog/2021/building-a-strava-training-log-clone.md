@@ -1,7 +1,7 @@
 ---
-title: building a Strava training log clone for my runs
+title: Building a Strava training log clone for my runs
 ---
-# building a Strava training log clone for my runs
+# Building a Strava training log clone for my runs
 [[date]]
 
 

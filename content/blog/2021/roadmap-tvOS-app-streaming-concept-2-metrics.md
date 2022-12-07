@@ -1,8 +1,8 @@
 ---
-title: "brainstorm: tvOS app to stream Concept 2 metrics to my TV"
+title: "Brainstorm: tvOS app to stream Concept 2 metrics to my TV"
 ---
 
-# brainstorm: tvOS app to stream Concept 2 metrics to my TV
+# Brainstorm: tvOS app to stream Concept 2 metrics to my TV
 [[date]]
 
 [[toc]]

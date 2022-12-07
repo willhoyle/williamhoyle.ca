@@ -1,12 +1,12 @@
 ---
-title: 'how to write a c++ node addon with cmake-js and node-addon-api module'
+title: 'How to write a c++ node addon with cmake-js and node-addon-api module'
 publishedAt: 2019-11-12
 categories: ['tutorial']
 languages: ['javascript', 'node.js', 'c++']
 tags: ['napi', 'financialcpp']
 ---
 
-# how to write a c++ node addon api with cmake-js and node-addon-api module
+# How to write a c++ node addon api with cmake-js and node-addon-api module
 [[date]]
 
 In this tutorial, I'll show how to build a c++ node addon with cmake-js and node-addon-api module by using [financialcpp](https://financialcpp.com) as an example package. Hopefully these notes can help someone figure it out for their own application.
